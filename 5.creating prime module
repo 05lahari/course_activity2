@@ -1,0 +1,126 @@
+#a) isPrime check
+def isPrime(n):
+  if(n==1):
+    return False
+  elif(n==2):
+    return True
+  else:
+    for x in range(2,n):
+      if(n%x==0):
+        return False
+    return True
+#x=int(input("enter x:"))
+#print("prime:",isPrime(x))
+
+#b) isPalindrome prime check
+def isPalindromePrime(n):
+   flag=False
+   rev=0
+   num=n
+   while(num>0):
+     rem=num%10
+     rev=(rev*10)+rem
+     num=num//10
+   print('n=',n,'rev=',rev)
+   if n==rev: flag=True
+   if(n==1):
+     return False
+   elif(n==2):
+     return True
+   else:
+     for x in range(2,n):
+        if(n%x==0):
+           return False
+     if flag==True: return True
+     else:return False
+#x=int(input('enter x'))
+#print('isPalindromePrime:',isPalindromePrime(x))
+
+#c) isEmirp
+def isEmirp(n):
+   flag=False
+   rev=0
+   num=n
+   while(num>0):
+     rem=num%10
+     rev=(rev*10)+rem
+     num=num//10
+   print('n=',n,'rev=',rev)
+   if(isPrime(n)==True and isPrime(rev)==True):
+      return True
+   else:
+      return False
+#x=int(input('enter x'))
+#print('prime:',isEmirp(x))
+ 
+#d) Mersenne Prime
+def mersennePrime(n):
+  if(isPrime(n)):
+    return (pow(2,n)-1)
+  else:
+    print(n,'is Not prime')
+#x=int(input('enter x'))
+#print('Mersenne prime((2 power n)-1):',mersennePrime(x))
+
+#e) Twin Primes
+print("twin Primes pair of prime numbers with a diiference of 2.")
+def printTwinPrimes(r):
+   for i in range(2,r+1):
+     for j in range(2,r+1):
+       if isPrime(i) and isPrime(j) and j-i==2:
+         print('(',i,',',j,')','are Twin primes')
+#print("enter the range of coprime:")
+#x=int(input("enter x:"))
+#printTwinPrimes(x)
+
+import Prime
+print("The first 100 prime numbers are:")
+for i in range(2,101):
+  if(Prime.isPrime(i)):
+     print(i,end='')
+     
+print('\n The first 200 palindromes prime numbers are:')
+for i in range(2,101):
+  if(Prime.isEmirp(i)):
+    print(i,end='')
+
+print('\n The first 100 Emirp numbers are:')
+for i in range(2,101):
+  if(Prime.isEmirp(i)):
+    print(i,end='')
+
+print('\n Mersenne prime numbers for the p value below 32:')
+for i in range(2,33):
+  if(Prime.isPrime(Prime.mersennePrime(i))):
+    print(i,end='')
+
+print('\n Twin prime numbers below 1000:')
+Prime.printTwinPrimes(1000)
+
+
+
+
+
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
