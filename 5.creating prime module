@@ -1,3 +1,5 @@
+Prime.py Module
+
 #a) isPrime check
 def isPrime(n):
   if(n==1):
@@ -73,6 +75,8 @@ def printTwinPrimes(r):
 #x=int(input("enter x:"))
 #printTwinPrimes(x)
 
+Test.py
+
 import Prime
 print("The first 100 prime numbers are:")
 for i in range(2,101):
@@ -96,31 +100,3 @@ for i in range(2,33):
 
 print('\n Twin prime numbers below 1000:')
 Prime.printTwinPrimes(1000)
-
-
-
-
-
-
-
-
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
- 
- 
- 
- 
- 
- 
- 
-
-
-
